@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://raw.githubusercontent.com/krytoichel/predict-html/main/ss.jpg');
+            background-size: cover;
+            font-family: Georgia, serif;
+            background-repeat: no-repeat; /* Запрещает повторение фона */
+            background-attachment: fixed; /* Фиксирует фон при прокрутке страницы */
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+            padding-top: 5vw; /* Используем относительные единицы для отступа сверху */
+        }
+
+        #prediction {
+            display: inline; /* Отображать элемент как inline */
+            font-size: 3vw; /* Используем относительные единицы для размера шрифта */
+            font-weight: bold;
+            font-style: italic;
+            border: 1px solid black; /* Добавьте черную рамку вокруг текста */
+            background-color: black; /* Установите черный фон */
+            color: white; /* Установите белый цвет текста */
+        }
+
+        #titlee {
+            display: inline;
+            font-size: 3vw; /* Используем относительные единицы для размера шрифта */
+            font-style: italic;
+            border: 1px solid black; /* Добавьте черную рамку вокруг текста */
+            background-color: black; /* Установите черный фон */
+            color: white; /* Установите белый цвет текста */
+        }
+    </style>
+    <title>Предсказание</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="titlee">Предсказание:</h1>
+        <p></p>
+        <p id="prediction"></p>
+    </div>
+
+    <script>
+        const predictions = [
+            "Сегодня у вас будет удачный день!",
+            "Ожидайте неожиданного события.",
+            "Постарайтесь быть терпеливым.",
+            "Успешным будет любое начатое дело.",
+            "Год принесет мир и покой.",
+            "Совсем скоро ты встретишь интересного человека.",
+            "За твоей дверью уже стоит счастье.",
+            "Интуиция не подведет тебя в этом году.",
+            "Нужно отдохнуть! Пора выбрать новое хобби.",
+            "Не бойся поступать так, как считаешь нужным.",
+        ];
+
+        // Получаем случайное предсказание
+        const randomPrediction = predictions[Math.floor(Math.random() * predictions.length)];
+
+        // Отображаем предсказание на странице
+        document.getElementById("prediction").textContent = randomPrediction;
+    </script>
+</body>
+</html>
